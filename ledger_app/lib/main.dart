@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'MoneyBox.dart';
 
 void main() {
   runApp(MyApp());
@@ -36,96 +37,19 @@ class _MyHomepageState extends State<MyHomepage> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              Container(
-                padding: const EdgeInsets.all(15.0),
-                decoration: BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.circular(15)),
-                height: 150,
-                child: Row(
-                  children: [
-                    Text(
-                      "ยอดเงินคงเหลือ",
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Expanded(
-                      child: Text(
-                        "20,000 บาท",
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.right,
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              MoneyBox("ยอดเงินคงเหลือ", 20000, Colors.green, 120),
               SizedBox(
                 height: 10,
               ),
-              Container(
-                padding: const EdgeInsets.all(15.0),
-                decoration: BoxDecoration(
-                    color: Colors.orange,
-                    borderRadius: BorderRadius.circular(15)),
-                height: 150,
-                child: Row(
-                  children: [
-                    Text(
-                      "รายรับ",
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Expanded(
-                      child: Text(
-                        "10,000 บาท",
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.right,
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              MoneyBox("รายรับ", 10000, Colors.orange, 100),
               SizedBox(
                 height: 10,
               ),
-              Container(
-                padding: const EdgeInsets.all(15.0),
-                decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(15)),
-                height: 150,
-                child: Row(
-                  children: [
-                    Text(
-                      "รายจ่าย",
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Expanded(
-                      child: Text(
-                        "5,000 บาท",
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.right,
-                      ),
-                    )
-                  ],
-                ),
+              MoneyBox("รายจ่าย", 5000, Colors.blue, 100),
+              SizedBox(
+                height: 10,
               ),
+              MoneyBox("ยอดค้างชำระ", 2000, Colors.red[200], 100),
             ],
           )),
     );
